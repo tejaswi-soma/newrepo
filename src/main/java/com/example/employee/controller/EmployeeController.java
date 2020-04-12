@@ -50,6 +50,6 @@ public class EmployeeController {
     public HttpStatus deleteEmployeeById(@PathVariable("id") Long id)  throws RecordNotFoundException {
                                                    
         service.deleteEmployeeById(id);
-        return HttpStatus.FORBIDDEN;
+        return HttpStatus.OK;
     }
 }
