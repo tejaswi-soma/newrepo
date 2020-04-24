@@ -13,7 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.example.employee.exception.RecordNotFoundException;
 import com.example.employee.model.Employee;
 import com.example.employee.service.EmployeeService;
@@ -39,7 +38,7 @@ public class EmployeeController {
         return new ResponseEntity<Employee>(entity, new HttpHeaders(), HttpStatus.OK);
     }
  
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Employee> createOrUpdateEmployee(@RequestBody Employee employee)
                                                     throws RecordNotFoundException {
     	Employee updated = service.createOrUpdateEmployee(employee);
